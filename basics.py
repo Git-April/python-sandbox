@@ -43,3 +43,30 @@ print(3 + 3)
 print(2 * 5)
 
 print("I am", 1000, "years old")
+
+#Python Comments
+#This is a comment
+print("Hello, World!") #This is a comment
+
+#print("Hello, World!")
+print("Cheers, Mate!")
+
+#This is a comment
+#written in 
+#more than just one line
+print("Hello, World!")
+
+"""
+This is a comment
+written in
+more than just one line
+"""
+print("Hello, World!")
+
+#print("This should not run")
+
+"""
+This is
+a multiline
+comment
+"""
