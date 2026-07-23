@@ -43,3 +43,25 @@ def myfunc3():
     myfunc3variable = "fantastic"
 myfunc3()
 print("Python is " + myfunc3variable)
+
+j is used as the letter for representing a complex number (not i like in math contexts)
+Example
+x = 1j
+
+On lists [], sets {}, and tuples ():
+Mutable: Elements can be modified in lists and sets, but not in tuples
+Ordered: The order of elements is maintained in lists and tuples, but not in sets.
+Duplicates: Lists and tuples can have duplicates, sets cannot.
+Different data types: Allowed in lists and tuples, not in sets.
+Lists and tuples are the same except that lists can have elements modified, tuples cannot.
+Sets are different from lists in that the order of elements is not maintained, duplicates are not allowed, and every element has to have the same data type.
+A frozenset then is an immutable set.
+
+When explicitly declaring the list type (and similar for tuples and sets), list() takes an iterable parameter (a tuple is an example of an iterable) and converting it to a list
+
+Bytes and bytearray datatypes:
+Bytes cannot be changed (immutable), bytearray can.
+Both deal with encoding. More advanced topics to dive into as needed.
+Memoryview seems related and can help to improve runtime.
+
+NoneType and None are useful in dealing with functions with no return value.

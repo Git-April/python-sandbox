@@ -188,3 +188,60 @@ print("Python is " + myfunc4variable)
 x = 5
 y = "John"
 print(type(x))
+
+#Python Data Types
+x = 5
+print(type(x))
+
+x = 1j #new
+print(type(x))
+
+x = "Hello World" #str
+x = 20 #int
+x = 20.5 #float
+x = 1j #complex
+x = ["apple", "banana", "cherry"] #list
+x = ("apple", "banana", "cherry") #tuple #new
+x = {"apple", "banana", "cherry"} #set #new
+print(x)
+x = range(6) #range
+print(x)
+x = {"name": "John", "age": 36} #dict
+x = frozenset({"apple", "banana", "cherry"}) #frozenset
+print(x)
+x = 5
+print(x)
+x = True #bool
+print(x)
+x = b"Hello" #bytes
+print(x)
+x = bytearray(5) #bytearray
+print(x)
+x = memoryview(bytes(5)) #memoryview
+print(x)
+x = None #NoneType
+print(x)
+print(type(x))
+
+x = str("Hello World")
+x = int(20)
+x = float(20.5)
+x = complex(1j)
+x = list(("apple", "banana", "cherry"))
+x = tuple(("apple", "banana", "cherry"))
+x = set(("apple", "banana", "cherry"))
+x = range(6)
+x = dict(name="John", age=36)
+x = frozenset(("apple", "banana", "cherry"))
+x = bool(5)
+print(x)
+x = bytes(5)
+x = bytearray(5)
+x = memoryview(bytes(5))
+
+x = 5
+y = 3.14
+z = "Hello"
+print(type(x))
+print(type(y))
+print(type(z))
