@@ -1,0 +1,45 @@
+Things that are new or easy to forget are noted in the files with #new
+Here are some notes on those Things
+
+Print can have an "end" as a final statement to override the default \n . This allows the next print statement to carry on in the same line instead of the next line.
+Example:
+print("Hello World!", end=" ")
+
+Variables are case sensitive (I rarely need to think about this).
+Example:
+a = 4
+A = "Sally"
+
+Variables must start with a letter or an underscore, not a number (I rarely need to think about this).
+
+Multiple variables can be assigned to multiple values at the same time.
+Example:
+x, y, z = "Orange", "Banana", "Cherry"
+
+Multiple variables can be set to the same value at the same time.
+Example:
+x = y = z = "Orange"
+
+Unpacking: Values in a list or tuple can be extracted into variables all in one line.
+Number of values being unpacked into variables much match the number of values in the list or tuple, otherwise it'll throw an error.
+Example:
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+
+Variable of the same name inside of a function overrides global.
+If it exists in the function, it must be defined before it is used - the global one will not be accessed and instead throw an error because it has not been defined yet, knowing that there exists a local variable.
+Example:
+x = "awesome"
+def myfunc2():
+    x = "fantastic"
+    print("Python is " + x)
+myfunc2()
+
+Declaring a variable as global inside of a function allows it to be accessed outside of the function after the function is called.
+This can also be used to change an already-defined global variable initialized outside of the function.
+Example:
+def myfunc3():
+    global myfunc3variable
+    myfunc3variable = "fantastic"
+myfunc3()
+print("Python is " + myfunc3variable)
