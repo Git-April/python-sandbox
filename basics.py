@@ -303,3 +303,33 @@ z = 2+3j
 print(type(x))
 print(type(y))
 print(type(z))
+
+#Python Casting
+x = int(1)
+y = int(2.8)
+z = int("3")
+print(x)
+print(y)
+print(z)
+
+x = float(1)
+y = float(2.8)
+z = float("3")
+w = float("4.2")
+print(x)
+print(y)
+print(z)
+print(w)
+
+x = str("s1")
+y = str(2)
+z = str(3.0)
+print(x)
+print(y)
+print(z)
+
+x = 1
+a = float(x)
+b = str(x)
+print(a)
+print(b)
