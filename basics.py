@@ -296,3 +296,10 @@ print(type(b))
 print(type(c))
 
 print(random.randrange(1, 10))
+
+x = 5
+y = 3.15
+z = 2+3j
+print(type(x))
+print(type(y))
+print(type(z))
