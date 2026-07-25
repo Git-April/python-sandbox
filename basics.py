@@ -499,3 +499,94 @@ print(10 > 9)
 print(10 == 9)
 print(bool("Hello"))
 print(bool(0))
+
+#Python Operators
+print(10 + 5)
+
+sum1 = 100 + 50
+sum2 = sum1 + 250
+sum3 = sum2 + sum2
+
+x = 15
+y = 4
+
+print(x + y)
+print(x - y)
+print(x * y)
+print(x / y)
+print(x % y)
+print(x ** y)
+print(x // y)
+
+x = 12
+y = 5
+print(x / y)
+print(x // y)
+
+print(x & 3)
+print(x | 3)
+print(x >> 3)
+print(x << 3)
+print(x:=3)
+print(x)
+
+numbers = [1, 2, 3, 4, 5]
+if(count := len(numbers)) > 3: #new
+    print(f"List has {count} elements")
+
+num = 6
+x = "WEEKEND!" if num > 5 else "Workday"
+print(x)
+
+num = 6
+x = "Fri" if num == 5 else "Sat" if num == 6 else "Sun" if num == 7 else "weekday" #new
+print(x)
+
+x = 5
+y = 3
+print(x == y)
+print(x != y)
+print(x > y)
+print(x < y)
+print(x >= y)
+print(x <= y)
+
+x = 5
+print(1 < x < 10)
+print(1 < x and x < 10)
+
+x = 5
+print(x > 0 and x < 10)
+print(not(x > 3 and x < 10))
+
+x = ["apple", "banana"]
+y = ["apple", "banana"]
+z = x
+print(x is z) #new
+print(x is y)
+print(x == y)
+print(x is not y)
+
+fruits = ["apple", "banana", "cherry"]
+print("banana" in fruits)
+print("pineapple" not in fruits)
+
+text = "Hello World"
+print("H" in text)
+print("hello" in text)
+print("z" not in text)
+
+print(6 & 3)
+print(6 | 3)
+print(6 ^ 3)
+
+print((6 + 3) - (6 - 3))
+print(100 + 5 * 3)
+print(5 + 4 - 7 + 3)
+
+a = 15
+b = 4
+print(a % b)
+print(a // b)
+print(a ** b)
+a += 10

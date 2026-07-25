@@ -65,3 +65,23 @@ Both deal with encoding. More advanced topics to dive into as needed.
 Memoryview seems related and can help to improve runtime.
 
 NoneType and None are useful in dealing with functions with no return value.
+
+Walrus operator := means to set the variable to the value as part of a larger operation, such as within a print statement or an if statement
+Examples:
+print(x:=3)
+numbers = [1, 2, 3, 4, 5]
+if(count := len(numbers)) > 3:
+    print(f"List has {count} elements")
+
+Ternary operator allows inline if/else statements. Something about this reminds me of SQL case statements.
+Example:
+num = 6
+x = "Fri" if num == 5 else "Sat" if num == 6 else "Sun" if num == 7 else "weekday" #new
+
+Is operator check if both values point to the same object in memory (compare to ==, which checks if the variables ar equal)
+Example:
+x = ["apple", "banana"]
+y = ["apple", "banana"]
+z = x
+print(x is z) #new
+print(x is y)
