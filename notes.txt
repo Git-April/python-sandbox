@@ -76,14 +76,14 @@ if(count := len(numbers)) > 3:
 Ternary operator allows inline if/else statements. Something about this reminds me of SQL case statements.
 Example:
 num = 6
-x = "Fri" if num == 5 else "Sat" if num == 6 else "Sun" if num == 7 else "weekday" #new
+x = "Fri" if num == 5 else "Sat" if num == 6 else "Sun" if num == 7 else "weekday"
 
 Is operator check if both values point to the same object in memory (compare to ==, which checks if the variables ar equal)
 Example:
 x = ["apple", "banana"]
 y = ["apple", "banana"]
 z = x
-print(x is z) #new
+print(x is z)
 print(x is y)
 
 List Comprehension: a simpler way to iterate through a list
@@ -95,3 +95,27 @@ newlist = [x for x in fruits if "a" in x]
 print(newlist)
 
 Remember: when specifying a range like [2:5], the end position is not included in the result
+
+To make a one-item tuple, it has to be followed by a comma, otherwise it wont be recognized as a tuple
+Example:
+thistuple = ("apple",)
+print(type(thistuple))
+
+In unpacking tuples, the * means to assign the remainder of the variables to that variable as a list, based on positioning in the unpack
+Examples:
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+(green, yellow, *red) = fruits
+print(green)
+print(yellow)
+print(red)
+fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
+(green, *tropic, red) = fruits
+print(green)
+print(tropic)
+print(red)
+
+Tuples can be multiplied by integers to double it
+Example
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+print(mytuple)
