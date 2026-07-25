@@ -85,3 +85,13 @@ y = ["apple", "banana"]
 z = x
 print(x is z) #new
 print(x is y)
+
+List Comprehension: a simpler way to iterate through a list
+Examples:
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if "a" in x]
+print(newlist)
+
+Remember: when specifying a range like [2:5], the end position is not included in the result
