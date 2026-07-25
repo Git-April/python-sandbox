@@ -195,3 +195,10 @@ match day:
         print("A weekday in May")
     case _:
         print("No match")
+
+After a for or while loop, an else can be added at the end if and when the loop completes to run once.
+Example:
+for x in range(6):
+    print(x)
+else: #new
+    print("Finally finished!")
