@@ -4,6 +4,7 @@ import functools #Python Functions
 import basics_modules as bm #Python Modules
 import platform #Python Modules
 import datetime #Python Dates
+import math #Python Math
 
 #Python Intro
 print("Hello, World!")
@@ -2642,3 +2643,35 @@ print(x.strftime("%B"))
 
 x = datetime.datetime.now()
 print(x.strftime("%Y"))
+
+#Python Math
+x = min(5, 10, 25)
+y = max(5, 10, 25)
+
+print(x)
+print(y)
+
+x = abs(-7.25)
+
+print(x)
+
+x = pow(4, 3)
+
+print(x)
+
+x = math.sqrt(64)
+print(x)
+
+x = math.ceil(1.4)
+y = math.floor(1.4)
+
+print(x)
+print(y)
+
+x = math.pi
+print(x)
+
+print(min(5, 10))
+print(max(5, 10))
+print(abs(-7.25))
+print(pow(4, 3))
