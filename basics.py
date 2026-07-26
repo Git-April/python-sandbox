@@ -2,12 +2,12 @@ import sys #Get Started
 import random #Python Numbers
 import functools #Python Functions
 
-#Intro
+#Python Intro
 print("Hello, World!")
 print(2+2)
 print(10*2)
 
-#Get Started
+#Python Get Started
 print(sys.version)
 
 #Python Syntax
@@ -2476,3 +2476,36 @@ def greet(name):
     print("Hello", name)
 
 greet("Emil")
+
+#Python Range
+x = range(10)
+print(x)
+
+x = range(3, 10)
+print(x)
+
+x = range(3, 10, 2)
+print(x)
+
+for i in range(10):
+    print(i)
+
+print(list(range(5)))
+print(list(range(1, 6)))
+print(list(range(5, 20, 3)))
+
+r = range(10)
+print(r[2])
+print(r[:3])
+
+r = range(0, 10, 2)
+print(6 in r)
+print(7 in r)
+
+r = range(0, 10, 2)
+print(len(r))
+
+for i in range(6):
+    print(i)
+for i in range(2, 6):
+    print(i)
