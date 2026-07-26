@@ -411,3 +411,15 @@ def my_gen():
 gen = my_gen()
 print(next(gen))
 gen.close()
+
+Next keyword can be used in any iterable
+Example:
+mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+print(next(myit))
+print(next(myit))
+print(next(myit))
+
+for loops actually creates an iterator and calls next() on each loop
+
+iterators can be extended into my own class by instantiating __init__ returning self, and __next__
