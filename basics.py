@@ -2620,3 +2620,5 @@ x = dir(platform) #new
 print(x)
 
 print(dir(bm))
+
+print(platform.system())
