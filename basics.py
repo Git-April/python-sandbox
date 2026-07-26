@@ -5,6 +5,7 @@ import basics_modules as bm #Python Modules
 import platform #Python Modules
 import datetime #Python Dates
 import math #Python Math
+import json #Python JSON
 
 #Python Intro
 print("Hello, World!")
@@ -2675,3 +2676,58 @@ print(min(5, 10))
 print(max(5, 10))
 print(abs(-7.25))
 print(pow(4, 3))
+
+#Python JSON
+x = '{ "name":"John", "age":30, "city":"New York"}'
+
+y = json.loads(x)
+
+print(y["age"])
+
+x = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+
+y = json.dumps(x)
+
+print(y)
+
+print(json.dumps({"name": "John", "age": 30}))
+print(json.dumps(["apple", "bananas"]))
+print(json.dumps(("apple", "bananas")))
+print(json.dumps("hello"))
+print(json.dumps(42))
+print(json.dumps(31.76))
+print(json.dumps(True))
+print(json.dumps(False))
+print(json.dumps(None))
+
+x = {
+    "name": "John",
+    "age": 30,
+    "married": True,
+    "divorded": False,
+    "children": ("Ann", "Billy"),
+    "pets": None,
+    "cars": [
+        {"model": "BMW 230", "mpg": 27.5},
+        {"model": "Ford Edge", "mpg": 24.1}
+    ]
+}
+
+print(json.dumps(x))
+
+json.dumps(x, indent=4)
+print(json.dumps(x, indent=4))
+
+json.dumps(x, indent=4, separators=(". ", " = "))
+print(json.dumps(x, indent=4, separators=(". ", " = ")))
+
+json.dumps(x, indent=4, sort_keys=True)
+print(json.dumps(x, indent=4, sort_keys=True))
+
+x = '{"name":"Emil", "age":30}'
+y = json.loads(x)
+print(y["age"])
