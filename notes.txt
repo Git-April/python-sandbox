@@ -423,3 +423,8 @@ print(next(myit))
 for loops actually creates an iterator and calls next() on each loop
 
 iterators can be extended into my own class by instantiating __init__ returning self, and __next__
+
+dir on a module returns all of the names belonging to the module
+Example:
+x = dir(platform)
+print(x)

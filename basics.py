@@ -1,6 +1,8 @@
 import sys #Get Started
 import random #Python Numbers
 import functools #Python Functions
+import basics_modules as bm #Python Modules
+import platform #Python Modules
 
 #Python Intro
 print("Hello, World!")
@@ -2604,3 +2606,17 @@ for x in myiter:
 mytuple = ("apple", "banana", "cherry")
 myit = iter(mytuple)
 print(next(myit))
+
+#Python Modules
+bm.greeting("Jonathan")
+
+a = bm.person1["age"]
+print(a)
+
+x = platform.system()
+print(x)
+
+x = dir(platform) #new
+print(x)
+
+print(dir(bm))
