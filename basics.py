@@ -7,6 +7,7 @@ import datetime #Python Dates
 import math #Python Math
 import json #Python JSON
 import re #Python RegEx
+import camelcase #Python PIP
 
 #Python Intro
 print("Hello, World!")
@@ -2784,3 +2785,10 @@ print(x.group())
 txt = "The rain in Spain"
 x = re.search("Spain", txt)
 print(x.span())
+
+#Python pip
+c = camelcase.CamelCase()
+
+txt = "hello world"
+
+print(c.hump(txt))

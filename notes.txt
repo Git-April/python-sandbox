@@ -428,3 +428,5 @@ dir on a module returns all of the names belonging to the module
 Example:
 x = dir(platform)
 print(x)
+
+Find pip packages to install at https://pypi.org/
