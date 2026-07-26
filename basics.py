@@ -3,6 +3,7 @@ import random #Python Numbers
 import functools #Python Functions
 import basics_modules as bm #Python Modules
 import platform #Python Modules
+import datetime #Python Dates
 
 #Python Intro
 print("Hello, World!")
@@ -2622,3 +2623,22 @@ print(x)
 print(dir(bm))
 
 print(platform.system())
+
+#Python Dates
+x = datetime.datetime.now()
+print(x)
+
+x = datetime.datetime.now()
+
+print(x.year)
+print(x.strftime("%A"))
+
+x = datetime.datetime(2020, 5, 17)
+print(x)
+
+x = datetime.datetime(2018, 6, 1)
+
+print(x.strftime("%B"))
+
+x = datetime.datetime.now()
+print(x.strftime("%Y"))
