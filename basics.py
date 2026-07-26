@@ -6,6 +6,7 @@ import platform #Python Modules
 import datetime #Python Dates
 import math #Python Math
 import json #Python JSON
+import re #Python RegEx
 
 #Python Intro
 print("Hello, World!")
@@ -2731,3 +2732,55 @@ print(json.dumps(x, indent=4, sort_keys=True))
 x = '{"name":"Emil", "age":30}'
 y = json.loads(x)
 print(y["age"])
+
+#Python RegEx
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+
+print(x)
+
+print(re.split(" ", txt))
+
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
+
+txt = "The rain in Spain"
+x = re.findall("Portugal", txt)
+print(x)
+
+txt = "The rain in Spain"
+x = re.search("\s", txt)
+print("The first white-space character is located in position:", x.start())
+
+txt = "The rain in Spain"
+x = re.search("Portugal", txt)
+print(x)
+
+txt = "The rain in Spain"
+x = re.split("\s", txt)
+print(x)
+
+txt = "The rain in Spain"
+x = re.sub("\s", "9", txt)
+print(x)
+
+txt = "The rain in Spain"
+x = re.search("ai", txt)
+print(x)
+
+txt = "The rain in Spain"
+x = re.search(r"\bS\w+", txt)
+print(x.span())
+
+txt = "The rain in Spain"
+x = re.search(r"\bS\w+", txt)
+print(x.string)
+
+txt = "The rain in Spain"
+x = re.search(r"\bS\w+", txt)
+print(x.group())
+
+txt = "The rain in Spain"
+x = re.search("Spain", txt)
+print(x.span())
