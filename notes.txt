@@ -44,6 +44,17 @@ def myfunc3():
 myfunc3()
 print("Python is " + myfunc3variable)
 
+Similarly, nonlocal refers to the variable of the same name outside of a nested inner function.
+Example:
+def myfunc1():
+    x = "Jane"
+    def myfunc2():
+        nonlocal x
+        x = "hello"
+    myfunc2()
+    return x
+print(myfunc1())
+
 j is used as the letter for representing a complex number (not i like in math contexts)
 Example
 x = 1j
@@ -202,3 +213,201 @@ for x in range(6):
     print(x)
 else: #new
     print("Finally finished!")
+
+kwargs means keyword arguments
+args means arbitrary arguements
+
+To only allow positional arguements, and not allow keyword arguments, add , / to the end of the arguments in a function
+Example:
+def my_function(name, /):
+    print("Hello", name)
+my_function("Emil")
+
+To only allow keyword arguements, and not allow positional arguments, add *, to the beginning of the arguments in a function
+Example:
+def my_function(*, name):
+    print("Hello", name)
+my_function(name = "Emil")
+
+The above two notes can be combined to allow some only positional and some only keyword
+Example:
+def my_function(a, b, /, *, c, d):
+    return a + b + c + d
+result = my_function(5, 10, c = 15, d = 20)
+print(result)
+
+*args: a parameter starting with a * in a function means an unknown number of positional arguments may be passed to a function. This is received into the function as a tuple.
+Example:
+def my_function(*kids): #new
+    print("The youngest child is " + kids[2])
+my_function("Emil", "Tobias", "Linus")
+
+**kwargs: a parameter starting with a * in a function means an unknown number of keyword arguments may be passed to a function. This is received into the function as a dictionary.
+Example:
+def my_function(**myvar):
+    print("Type:", type(myvar))
+    print("Name:", myvar["name"])
+    print("Age:", myvar["age"])
+    print("All data:", myvar)
+my_function(name = "Tobias", age = 30, city = "Bergen")
+
+#The * and ** operators can be used to unpack arguments into a function as well
+Examples:
+def my_function(a, b, c):
+    return a + b + c
+numbers = [1, 2, 3]
+result = my_function(*numbers)
+print(result)
+def my_function(fname, lname):
+    print("Hello", fname, lname)
+person = {"fname": "Emil", "lname": "Refsnes"}
+my_function(**person)
+
+Decorator takes another function as input and returns a new function. putting the decorator @changecase directly above the function applies the change to the following function.
+Examples:
+def changecase(func): #new
+    def myinner():
+        return func().upper()
+    return myinner
+@changecase
+def myfunction():
+    return "Hello Sally"
+print(myfunction())
+def beforeafter(func):
+    def inner():
+        print("Before")
+        func()
+        print("After")
+    return inner
+@beforeafter
+def test():
+    print("During")
+test()
+
+The decorator can also take arguments by adding another layer of wrapper to handle the argument
+Example:
+def changecase(n):
+    def changecase(func):
+        def myinner():
+            if n == 1:
+                a = func().lower()
+            else:
+                a = func().upper()
+            return a
+        return myinner
+    return changecase
+@changecase(1)
+def myfunction():
+    return "Hello Linus"
+print(myfunction())
+
+the __name__ special keyword can be used to return the function's name
+Example:
+def myfunction():
+    return "Have a great day!"
+print(myfunction.__name__)
+
+functools wraps preserves function metadata by calling its own decorator and handling copying over the metadata from the original passed function
+Example:
+def changecase(func):
+    @functools.wraps(func) #new
+    def myinner():
+        return func().upper()
+    return myinner
+@changecase
+def myfunction():
+    return "Have a great day!"
+print(myfunction.__name__)
+
+Lambda functions contain only one expression (so not a set of different lines which functions could have) and the result is returned automatically (no return keyword needed). Expression can be combined with topic of Comprehension (or similar) to have more functionality within the single expression.
+Syntax is x (function name) = lambda (lambda keyword) a (lambda argument(s)) : a + 10 (expression)
+Examples:
+x = lambda a : a + 10
+print(x(5))
+x = lambda a, b : a * b
+print(x(5, 6))
+def myfunc(n):
+    return lambda a : a * n
+mydoubler = myfunc(2)
+print(mydoubler(11))
+mytripler = myfunc(3)
+print(mytripler(11))
+numbers = [1, 2, 3, 4, 5]
+doubled = list(map(lambda x: x * 2, numbers))
+print(doubled)
+
+The python map() function applies a function to every element of the input
+Example:
+a = ['1', '2']
+ints = map(int, a)
+print(ints)
+print(list(ints))
+
+The python filter() function applies a function to every element of the input and returns if if the filter function returns True
+Example:
+def secondlettera(fruit):
+    return fruit[1] == "a"
+fruits = ["and", "banana", "mango"]
+filtered = filter(secondlettera, fruits)
+print(filtered)
+print(list(filtered))
+
+sort vs sorted function: sort affects the original list. sorted returns a new list at a different memory spot.
+
+Generators: The yield keyword makes the function a generator. The function only executes when you iterate over it. They can save memory because values are generated instead of all being stored in memory. They can be looped or the next keyword can be used to get the next value.
+If you call more nexts than are available, it errors.
+Examples:
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+for value in my_generator():
+    print(value)
+def large_sequence(n):
+    for i in range(n):
+        yield i
+gen = large_sequence(1000000)
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+Generator expressions can be created similar to list comprehension, using parentheses instead of square brackets.
+Example:
+gen_exp = (x * x for x in range(5))
+print(gen_exp)
+print(list(gen_exp))
+
+When the iterator variable in a for loop is not needed to be used, it can be set to an _ instead of an alphanumeric like i
+Example:
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+gen = fibonacci()
+for _ in range(100):
+    print(next(gen))
+
+In generator methods, the keyword send can be used to send a value into the generator
+Example:
+def echo_generator():
+    while True:
+        received = yield
+        print("Received:", received)
+gen = echo_generator()
+next(gen)
+gen.send("Hello")
+gen.send("World")
+
+The close method for the generator will skip the rest of the trys and hit the finally block
+Example:
+def my_gen():
+    try:
+        yield 1
+        yield 2
+        yield 3
+    finally:
+        print("Generator closed")
+gen = my_gen()
+print(next(gen))
+gen.close()
