@@ -441,3 +441,36 @@ class Person:
         print("Hello, my name is " + abc.name)
 p1 = Person("Emil", 36)
 p1.greet()
+
+Nuance about properties inside a class best represented by examples
+Examples:
+class Person:
+    species = "Human" <-- this belongs to the class as a class property
+    def __init__(self, name):
+        self.name = name <-- this belongs to the object as an instance property
+p1 = Person("Emil")
+p2 = Person("Tobias")
+print(p1.name)
+print(p2.name)
+print(p1.species)
+print(p2.species)
+class Person:
+    lastname = ""
+    def __init__(self, name):
+        self.name = name
+p1 = Person("Linus")
+p2 = Person("Emil")
+Person.lastname = "Refsnes" <-- therefore when the property is changed for the class itself, it changes the properties for all objects of the class
+print(p1.lastname)
+print(p2.lastname)
+
+Properties can be added to objects even if they're not defined within the class.
+Example:
+class Person:
+    def __init__(self, name):
+        self.name = name
+p1 = Person("Tobias")
+p1.age = 25
+print(p1.age)
+
+Difference between "functions" and "methods". Methods are functions that belong to a class.
