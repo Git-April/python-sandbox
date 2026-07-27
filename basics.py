@@ -8,6 +8,7 @@ import math #Python Math
 import json #Python JSON
 import re #Python RegEx
 import camelcase #Python PIP
+import cowsay #Python VirtualEnv
 
 #Python Intro
 print("Hello, World!")
@@ -2994,3 +2995,6 @@ while y == True:
         print("Wrong input, please try again.")
 
 print("Thank you!")
+
+#Python VirtualEnv
+cowsay.cow("Good Mooooorning!")
