@@ -430,3 +430,14 @@ x = dir(platform)
 print(x)
 
 Find pip packages to install at https://pypi.org/
+
+Self doesn't have to be called self, and it doesn't even have to be consistent within the class. It just has to be consistently the first parameter.
+Example:
+class Person:
+    def __init__(myobject, name, age):
+        myobject.name = name
+        myobject.age = age
+    def greet(abc):
+        print("Hello, my name is " + abc.name)
+p1 = Person("Emil", 36)
+p1.greet()
