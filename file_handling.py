@@ -1,4 +1,6 @@
-#Python File Handling
+import os #Python Delete Files
+
+#Python Read Files
 f = open("file_handling_demofile.txt")
 f = open("file_handling_demofile.txt", "rt")
 
@@ -26,6 +28,7 @@ with open("file_handling_demofile.txt") as f:
     for x in f:
         print(x)
 
+#Python Write/Create Files
 with open("file_handling_demofile.txt", "a") as f:
     f.write("Now the file has more content!")
 
@@ -37,3 +40,9 @@ with open("file_handling_demofile.txt", "w") as f:
 
 with open("file_handling_demofile.txt") as f:
     print(f.read())
+
+#Python Delete Files
+if os.path.exists("demofile.txt"):
+    os.remove("demofile.txt")
+else:
+    print("The file does not exist")
