@@ -517,3 +517,25 @@ boat1 = Boat("Ibiza", "Touring 20")
 plane1 = Plane("Boeing", "747")
 for x in (car1, boat1, plane1):
     x.move()
+
+Python Encapsulation: Double underscore inside a class makes it private to the class and not accessible from the outside.
+Example:
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age #new
+
+A single underscore in front of a property is a convention to say it's meant to be internal to the class, but it's not enforced.
+
+The second parameter of isinstance can be a tuple to check against multiple types
+Example:
+isinstance(num, (int, float))
+
+Name Mangling: the encapsulated __ propery can be accessed by the automatic internal Python rename of it to _ClassName__property
+Example:
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age
+p1 = Person("Emil", 30)
+print(p1._Person__age)
