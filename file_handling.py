@@ -25,3 +25,15 @@ with open("file_handling_demofile.txt") as f:
 with open("file_handling_demofile.txt") as f:
     for x in f:
         print(x)
+
+with open("file_handling_demofile.txt", "a") as f:
+    f.write("Now the file has more content!")
+
+with open("file_handling_demofile.txt") as f:
+    print(f.read())
+
+with open("file_handling_demofile.txt", "w") as f:
+    f.write("Woops! I have deleted the content!")
+
+with open("file_handling_demofile.txt") as f:
+    print(f.read())
