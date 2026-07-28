@@ -491,3 +491,29 @@ Example:
 class Student(Person):
     def __init__(self, fname, lname):
         super().__init__(fname, lname) #new
+
+If three different unrelated classes implement a method of the same name, it can be looped over and called all on the same loop iterator.
+Example:
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    def move(self):
+        print("Drive!")
+class Boat:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    def move(self):
+        print("Sail!")
+class Plane:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    def move(self):
+        print("Fly!")
+car1 = Car("Ford", "Mustang")
+boat1 = Boat("Ibiza", "Touring 20")
+plane1 = Plane("Boeing", "747")
+for x in (car1, boat1, plane1):
+    x.move()
