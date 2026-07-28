@@ -485,3 +485,9 @@ class Person:
         return f"{self.name} ({self.age})"
 p1 = Person("Tobias", 36)
 print(p1)
+
+Super keyword in a child class that makes the child inherit all methods and properties from the parent class
+Example:
+class Student(Person):
+    def __init__(self, fname, lname):
+        super().__init__(fname, lname) #new

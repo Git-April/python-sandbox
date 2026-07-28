@@ -362,3 +362,62 @@ class Rectangle:
 r1 = Rectangle(5, 3)
 
 print(r1.area())
+
+#Python Inheritance
+class Person:
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
+
+    def printname(self):
+        print(self.firstname, self.lastname)
+
+x = Person("John", "Doe")
+x.printname()
+
+class Student(Person):
+    pass
+
+x = Student("Mike", "Olsen")
+x.printname()
+
+class Student(Person):
+    def __init__(self, fname, lname):
+        Person.__init__(self, fname, lname)
+
+class Student(Person):
+    def __init__(self, fname, lname):
+        super().__init__(fname, lname)
+
+class Student(Person):
+    def __init__(self, fname, lname):
+        super().__init__(fname, lname)
+        self.graduationyear = 2019
+
+class Student(Person):
+    def __init__(self, fname, lname, year):
+        super().__init__(fname, lname)
+        self.year = year
+
+x = Student("Mike", "Olsen", 2019)
+
+class Student(Person):
+    def __init__(self, fname, lname, year):
+        super().__init__(self, fname, lname)
+        self.gratduation_year = year
+
+    def welcome(self):
+        print("Welcome", self.firstname, self.lastname, "to the class of", self.gratduation_year)
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(self.name)
+
+class Dog(Animal):
+    pass
+
+d1 = Dog("Rex")
+d1.speak()
