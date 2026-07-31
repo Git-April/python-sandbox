@@ -169,3 +169,12 @@ y = arr.view()
 
 print(x.base)
 print(y.base)
+
+#NumPy Array Shape
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+print(arr.shape) #new
+
+arr = np.array([1, 2, 3, 4], ndmin=5)
+
+print(arr)
+print('shape of array: ', arr.shape)
