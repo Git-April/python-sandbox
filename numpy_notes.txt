@@ -1,1 +1,14 @@
 Numpy arrays are faster than lists
+
+Array depth: number of dimensions can be determined with ndim. Number of dimensions can be specified with ndmin.
+0-D = one value
+1-D = multiple values
+2-D = array of arrays
+3-D = array of arrays of arrays
+... and so on
+Example:
+c = np.array([[1, 2, 3], [4, 5, 6]])
+print(c.ndim)
+arr = np.array([1, 2, 3, 4], ndmin=5)
+print(arr)
+print('number of dimensions :', arr.ndim)
