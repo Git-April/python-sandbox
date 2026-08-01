@@ -1,5 +1,7 @@
 from numpy import random #Random Intro
 import numpy as np #Random Permutation
+import matplotlib.pyplot as plt #Seaborn Module
+import seaborn as sns #Seaborn Module
 
 #Random Intro
 x = random.randint(100)
@@ -40,3 +42,10 @@ print(arr)
 
 arr = np.array([1, 2, 3, 4, 5])
 print(random.permutation(arr))
+
+#Seaborn Module
+#sns.displot([0, 1, 2, 3, 4, 5])
+
+sns.displot([0, 1, 2, 3, 4, 5], kind="kde")
+
+plt.show()
