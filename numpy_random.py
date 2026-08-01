@@ -118,3 +118,7 @@ data = {
 
 # sns.displot(data, kind="kde")
 # plt.show()
+
+#Multinomial Distribution
+x = random.multinomial(n=6, pvals=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6])
+print(x)
