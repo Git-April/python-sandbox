@@ -44,11 +44,11 @@ arr = np.array([1, 2, 3, 4, 5])
 print(random.permutation(arr))
 
 #Seaborn Module
-#sns.displot([0, 1, 2, 3, 4, 5])
-#plt.show()
+# sns.displot([0, 1, 2, 3, 4, 5])
+# plt.show()
 
-#sns.displot([0, 1, 2, 3, 4, 5], kind="kde")
-#plt.show()
+# sns.displot([0, 1, 2, 3, 4, 5], kind="kde")
+# plt.show()
 
 #Normal Distribution
 x = random.normal(size=(2, 3))
@@ -58,4 +58,19 @@ x = random.normal(loc = 1, scale = 2, size=(2, 3))
 print(x)
 
 # sns.displot(random.normal(size=1000), kind="kde")
+# plt.show()
+
+#Binomial Distribution
+x = random.binomial(n=10, p=0.5, size=10)
+print(x)
+
+# sns.displot(random.binomial(n=10, p=0.5, size=1000))
+# plt.show()
+
+data = {
+  "normal": random.normal(loc=50, scale=5, size=1000),
+  "binomial": random.binomial(n=100, p=0.5, size=1000)
+}
+
+# sns.displot(data, kind="kde")
 # plt.show()
