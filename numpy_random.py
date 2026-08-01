@@ -45,7 +45,17 @@ print(random.permutation(arr))
 
 #Seaborn Module
 #sns.displot([0, 1, 2, 3, 4, 5])
+#plt.show()
 
-sns.displot([0, 1, 2, 3, 4, 5], kind="kde")
+#sns.displot([0, 1, 2, 3, 4, 5], kind="kde")
+#plt.show()
 
-plt.show()
+#Normal Distribution
+x = random.normal(size=(2, 3))
+print(x)
+
+x = random.normal(loc = 1, scale = 2, size=(2, 3))
+print(x)
+
+# sns.displot(random.normal(size=1000), kind="kde")
+# plt.show()
