@@ -94,5 +94,12 @@ data = {
   "binomial": random.binomial(n=1000, p=0.01, size=1000),
   "poisson": random.poisson(lam=10, size=1000)
 }
-sns.displot(data, kind="kde")
+# sns.displot(data, kind="kde")
+# plt.show()
+
+#Uniform Distribution
+x = random.uniform(size=(2, 3))
+print(x)
+
+sns.displot(random.uniform(size=1000), kind="kde")
 plt.show()
