@@ -73,3 +73,16 @@ print(df.loc["day2"])
 
 df = pd.read_csv('pandas_basics_data.csv')
 print(df)
+
+#Pandas Read CSV
+df = pd.read_csv('data.csv')
+print(df.to_string())
+
+df = pd.read_csv('data.csv')
+print(df)
+
+print(pd.options.display.max_rows)
+
+pd.options.display.max_rows = 9999
+df = pd.read_csv('data.csv')
+print(df)
