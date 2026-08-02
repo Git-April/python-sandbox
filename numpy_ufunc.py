@@ -152,3 +152,17 @@ print(newarr)
 arr = np.array([10, 15, 25, 5])
 newarr = np.diff(arr, n=2)
 print(newarr)
+
+#ufunc Finding LCM
+num1 = 4
+num2 = 6
+x = np.lcm(num1, num2)
+print(x)
+
+arr = np.array([3, 6, 9])
+x = np.lcm.reduce(arr)
+print(x)
+
+arr = np.arange(1, 11)
+x = np.lcm.reduce(arr)
+print(x)
