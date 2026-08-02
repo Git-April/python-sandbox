@@ -172,3 +172,9 @@ df.dropna(subset=['Date'], inplace=True)
 
 #Cleaning Wrong Data
 df.loc[7, 'Duration'] = 45
+
+#Removing Duplicates
+df = pd.read_csv('data.csv')
+print(df.duplicated())
+
+df.drop_duplicates(inplace=True)
