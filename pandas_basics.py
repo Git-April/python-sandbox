@@ -162,3 +162,10 @@ df.fillna({"Calories": x}, inplace=True)
 df = pd.read_csv('data.csv')
 x = df["Calories"].mode()
 df.fillna({"Calories": x}, inplace=True)
+
+#Cleaning Wrong Format
+df = pd.read_csv('data.csv')
+df['Date'] = pd.to_datetime(df['Date'], format='mixed')
+print(df.to_string())
+
+df.dropna(subset=['Date'], inplace=True)
