@@ -128,3 +128,13 @@ data = {
 df = pd.DataFrame(data)
 print(df)
 
+#Pandas Analyzing Data
+df = pd.read_csv('data.csv')
+print(df.head(10))
+
+df = pd.read_csv('data.csv')
+print(df.head())
+
+print(df.tail())
+
+print(df.info())
