@@ -138,3 +138,27 @@ print(df.head())
 print(df.tail())
 
 print(df.info())
+
+#Cleaning Empty Cells
+df = pd.read_csv('data.csv')
+new_df = df.dropna()
+print(new_df.to_string())
+
+df = pd.read_csv('data.csv')
+df.dropna(inplace=True)
+print(df.to_string())
+
+df = pd.read_csv('data.csv')
+df.fillna({"Calories": 130}, inplace=True)
+
+df = pd.read_csv('data.csv')
+x = df["Calories"].mean()
+df.fillna({"Calories": x}, inplace=True)
+
+df = pd.read_csv('data.csv')
+x = df["Calories"].median()
+df.fillna({"Calories": x}, inplace=True)
+
+df = pd.read_csv('data.csv')
+x = df["Calories"].mode()
+df.fillna({"Calories": x}, inplace=True)
