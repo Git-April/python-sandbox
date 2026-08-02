@@ -169,3 +169,6 @@ df['Date'] = pd.to_datetime(df['Date'], format='mixed')
 print(df.to_string())
 
 df.dropna(subset=['Date'], inplace=True)
+
+#Cleaning Wrong Data
+df.loc[7, 'Duration'] = 45
