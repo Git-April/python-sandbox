@@ -143,3 +143,12 @@ print(newarr)
 arr = np.array([5, 6, 7, 8])
 newarr = np.cumprod(arr)
 print(newarr)
+
+#ufunc Differences
+arr = np.array([12, 15, 25, 5])
+newarr = np.diff(arr)
+print(newarr)
+
+arr = np.array([10, 15, 25, 5])
+newarr = np.diff(arr, n=2)
+print(newarr)
