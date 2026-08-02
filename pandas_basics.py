@@ -178,3 +178,8 @@ df = pd.read_csv('data.csv')
 print(df.duplicated())
 
 df.drop_duplicates(inplace=True)
+
+#Pandas Correlations
+df = pd.read_csv('data2.csv')
+x = df.corr()
+print(x)
