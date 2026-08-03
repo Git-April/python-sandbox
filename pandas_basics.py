@@ -1,4 +1,5 @@
 import pandas as pd #Pandas HOME
+import matplotlib.pyplot as plt
 
 #Pandas HOME
 df = pd.read_csv('pandas_basics_data.csv')
@@ -183,3 +184,20 @@ df.drop_duplicates(inplace=True)
 df = pd.read_csv('data2.csv')
 x = df.corr()
 print(x)
+
+#Pandas Plotting
+df = pd.read_csv('data2.csv')
+# df.plot()
+# plt.show()
+
+df = pd.read_csv('data2.csv')
+# df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')
+# plt.show()
+
+df = pd.read_csv('data2.csv')
+# df.plot(kind='scatter', x = 'Duration', y = 'Maxpulse')
+# plt.show()
+
+df = pd.read_csv('data2.csv')
+# df["Duration"].plot(kind='hist')
+# plt.show()
