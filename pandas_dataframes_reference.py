@@ -220,3 +220,85 @@ data = {
 df = pd.DataFrame(data)
 s = df.duplicated()
 print(s)
+
+df = pd.read_csv('data.csv')
+print(df.empty)
+
+df = pd.DataFrame([[10, 12, 2], [3, 4, 7]])
+print(df.eq(7))
+
+data1 = {
+  "firstname": ["Sally", "Mary", "John", "Mary"],
+  "age": [50, 40, 30, 40]
+}
+df1 = pd.DataFrame(data1)
+data2 = {
+  "firstname": ["Sally", "Mary", "John", "Mary"],
+  "age": [50, 40, 30, 40]
+}
+df2 = pd.DataFrame(data2)
+print(df1.equals(df2))
+
+data = {
+  "Women": [125, 230, 412],
+  "Men": [219, 185, 452]
+}
+df = pd.DataFrame(data)
+print(df.eval("Women + Men"))
+
+data = {
+  "Brand": ["Ford", "Ford", "Ford"],
+  "Model": ["Sierra", "F-150", "Mustang"],
+  "Typ": ["2.0 GL", "Raptor", ["Mach-E", "Mach-1"]]
+}
+df = pd.DataFrame(data)
+newdf = df.explode('Typ')
+print(newdf)
+
+df = pd.read_csv('data.csv')
+newdf = df.ffill()
+print(newdf)
+
+df = pd.read_csv('data.csv')
+newdf = df.fillna(222222)
+print(newdf)
+
+data = {
+  "name": ["Sally", "Mary", "John"],
+  "age": [50, 40, 30],
+  "qualified": [True, False, False]
+}
+df = pd.DataFrame(data)
+newdf = df.filter(items=["name", "age"])
+print(newdf)
+
+data = {
+  "points":[100, 120, 114],
+  "total": [350, 340, 402]
+}
+df = pd.DataFrame(data)
+print(df.floordiv(10))
+
+df = pd.DataFrame([[10, 12, 2], [3, 4, 7]])
+print(df.ge(7))
+
+data = {
+  "firstname": ["Sally", "Mary", "John"],
+  "age": [50, 40, 30],
+  "qualified": [True, False, False]
+}
+df = pd.DataFrame(data)
+print(df.get("firstname"))
+
+data = {
+  'co2': [95, 90, 99, 104, 105, 94, 99, 104],
+  'car': ['Skoda', 'Skoda', 'Ford', 'Skoda', 'Ford', 'Ford', 'Skoda', 'Ford']
+}
+df = pd.DataFrame(data)
+print(df.groupby(["car"]).mean())
+
+df = pd.DataFrame([[10, 12, 2], [3, 4, 7]])
+print(df.gt(7))
+
+df = pd.read_csv('data.csv')
+print(df.head())
