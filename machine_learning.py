@@ -11,3 +11,12 @@ print(x)
 
 x = stats.mode(speed)
 print(x)
+
+x = numpy.std(speed)
+print(x)
+
+x = numpy.var(speed)
+print(x)
+
+x = numpy.percentile(speed, 0.75)
+print(x)
