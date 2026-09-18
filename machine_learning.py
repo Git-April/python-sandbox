@@ -2,6 +2,8 @@ import numpy
 from scipy import stats
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
+import pandas
+from sklearn import linear_model
 
 speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 
@@ -98,4 +100,21 @@ myline = numpy.linspace(2, 95, 100)
 
 print(r2_score(y, mymodel(x)))
 
-plt.show()
+# plt.show()
+
+df = pandas.read_csv('data3.csv')
+
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+
+predictedCO2 = regr.predict([[2300, 1300]])
+
+print(predictedCO2)
+print(regr.coef_)
+
+predictedCO2 = regr.predict([[3300, 1300]])
+
+print(predictedCO2)
