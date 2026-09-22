@@ -138,3 +138,34 @@ scaled = scale.transform([[2300, 1.3]])
 
 predictedCO2 = regr.predict([scaled[0]])
 print(predictedCO2)
+
+numpy.random.seed(2)
+
+x = numpy.random.normal(3, 1, 100)
+y = numpy.random.normal(150, 40, 100) / x
+
+# plt.scatter(x, y)
+
+train_x = x[:80]
+train_y = y[:80]
+test_x = x[80:]
+test_y = y[80:]
+
+mymodel = numpy.poly1d(numpy.polyfit(train_x, train_y, 4))
+
+myline = numpy.linspace(0, 6, 100)
+
+# plt.scatter(train_x, train_y)
+# plt.plot(myline, mymodel(myline))
+
+# plt.show()
+
+r2 = r2_score(train_y, mymodel(train_x))
+
+print(r2)
+
+r2 = r2_score(test_y, mymodel(test_x))
+
+print(r2)
+
+print(mymodel(5))
