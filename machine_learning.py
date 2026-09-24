@@ -3,7 +3,8 @@ from scipy import stats
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 import pandas
-from sklearn import linear_model
+from sklearn import linear_model, tree
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import StandardScaler
 
 speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
@@ -169,3 +170,28 @@ r2 = r2_score(test_y, mymodel(test_x))
 print(r2)
 
 print(mymodel(5))
+
+df = pandas.read_csv("data4.csv")
+
+d = {'UK': 0, 'USA': 1, 'N': 2}
+df['Nationality'] = df['Nationality'].map(d)
+d = {'YES': 1, 'NO': 0}
+df['Go'] = df['Go'].map(d)
+
+print(df)
+
+features = ['Age', 'Experience', 'Rank', 'Nationality']
+
+X = df[features]
+y = df['Go']
+
+print(X)
+print(y)
+
+dtree = DecisionTreeClassifier()
+dtree = dtree.fit(X, y)
+
+tree.plot_tree(dtree, feature_names=features)
+
+print(dtree.predict([[40, 10, 7, 1]]))
+print(dtree.predict([[40, 10, 6, 1]]))
