@@ -1,11 +1,13 @@
 import numpy
 from scipy import stats
+from scipy.cluster.hierarchy import dendrogram, linkage
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
-import pandas
 from sklearn import linear_model, tree, metrics
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import AgglomerativeClustering
+import pandas
 
 speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 
@@ -213,3 +215,24 @@ Specificity = metrics.recall_score(actual, predicted, pos_label=0)
 F1_score = metrics.f1_score(actual, predicted)
 
 print({"Accuracy":Accuracy, "Precision":Precision, "Sensitivity_recall":Sensitivity_recall, "Specificity":Specificity, "F1_score":F1_score})
+
+x = [4,5,10,4,3,11,14,6,10,12]
+y = [21,19,24,17,16,25,24,22,21,21]
+
+# plt.scatter(x, y)
+
+data = list(zip(x, y))
+
+print(data)
+
+linkage_data = linkage(data, method='ward', metric='euclidean')
+# dendrogram(linkage_data)
+
+hierarchical_cluster = AgglomerativeClustering(n_clusters=2, linkage='ward')
+labels = hierarchical_cluster.fit_predict(data)
+
+print(labels)
+
+# plt.scatter(x, y, c=labels)
+
+# plt.show()
