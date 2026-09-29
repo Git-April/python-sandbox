@@ -280,3 +280,31 @@ for choice in C:
     scores.append(logit.score(X,y))
 
 print(scores)
+
+cars = pandas.read_csv('data3.csv')
+print(cars.to_string())
+
+ohe_cars = pandas.get_dummies(cars[['Car']])
+
+print(ohe_cars.to_string())
+
+X = pandas.concat([cars[['Volume', 'Weight']], ohe_cars], axis=1)
+y = cars['CO2']
+
+regr = linear_model.LinearRegression()
+regr.fit(X,y)
+
+predictedCO2 = regr.predict([[2300, 1300, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]])
+
+print(predictedCO2)
+
+colors = pandas.DataFrame({'color': ['blue', 'red']})
+dummies = pandas.get_dummies(colors, drop_first=True)
+
+print(dummies)
+
+colors = pandas.DataFrame({'color': ['blue', 'red', 'green']})
+dummies = pandas.get_dummies(colors, drop_first=True)
+dummies['color'] = colors['color']
+
+print(dummies)
