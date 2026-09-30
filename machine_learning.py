@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score
 from sklearn import linear_model, tree, metrics, datasets
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import AgglomerativeClustering, KMeans
 from sklearn.linear_model import LogisticRegression
 import pandas
 
@@ -308,3 +308,29 @@ dummies = pandas.get_dummies(colors, drop_first=True)
 dummies['color'] = colors['color']
 
 print(dummies)
+
+x = [4, 5, 10, 4, 3, 11, 14, 6, 10, 12]
+y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
+
+# plt.scatter(x, y)
+
+data = list(zip(x, y))
+print(data)
+inertias = []
+
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters=i)
+    kmeans.fit(data)
+    inertias.append(kmeans.inertia_)
+
+# plt.plot(range(1, 11), inertias, marker='o')
+# plt.title('Elbow method')
+# plt.xlabel('Number of clusters')
+# plt.ylabel('Inertia')
+
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(data)
+
+# plt.scatter(x, y, c=kmeans.labels_)
+
+# plt.show()
